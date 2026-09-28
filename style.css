@@ -1,81 +1,185 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #00A2FF;
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* BODY */
+body{
+    font-family: "Press Start 2P", system-ui;
+    text-align: center;
+    background-color: #00A2FF;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+/* TITULOS */
 h1{
     color: #ffde00;
     font-family: "Press Start 2P", system-ui;
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 4vw, 3rem);
 }
 
 h2{
-    color: #FF00A1;
+    color: #ffde00;
     font-family: "Press Start 2P", system-ui;
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-.pkball{
-    scale: 1;
+strong{
+    color: #ffde00;
+    text-decoration: underline;
 }
-
+/* HEADER */
 #contenedor-titulo{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #3e00a8;
-    height: 5rem;
-    padding: 2rem;
-    align-content:center;
+    box-shadow: 5px 5px #21005b;
+    width: 100%;
+    padding: 1rem;
+
 }
 
-#contenedor-tarjetas {
+.pkball{
+    width: clamp(40px, 8vw, 70px);
+    height: auto;
+}
+
+/* LAYOUT GENERAL */
+#contenedor-general{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* INPUTS */
+#contenedor-input{
+    width: fit-content;
+    height: fit-content;
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border: 5px solid #ffde00;
+    background-color: #6f2be6;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 5px 5px #3e00a8;
     color: #FF00A1;
     font-family: "Press Start 2P", system-ui;
 }
 
-.tarjeta {
-    width: 250px;
-    border: 5px solid #ffde00;
-    background-color: #6f2be6;
+input{
+    width: min(100%, 400px);
+    height: 3rem;
     border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 10px #3e00a8;
+    border: none;
+    background-color: #c2c9ff;
+    font-family: "Press Start 2P", system-ui;
+    font-size: large;
+    text-align: center;
+    padding: .4rem;
 }
-
-.tarjeta:hover{
-    scale: 1.05;
-    transition: 0.1s;
-}
-
-.tarjeta img {
-    width: 150px;
-}
-
-.tarjeta img:hover{
-    transition: 0.1s;
-    scale: 1.3;
-}
-
 
 button{
+    padding: .8rem 1rem;
     background-color: #b3a125;
     border-radius: 10px;
+    border: none;
+    cursor: pointer;
     font-family: "Press Start 2P", system-ui;
+    transition: .2s;
 }
 
 button:hover{
     background-color: #ffde00;
-    scale: 1.1;
-    transition: 0.1s;
+    transform: scale(1.05);
 }
 
-input{
+.btn-cry{
+    background-color: none;
+}
+
+/* IMAGENES */
+#tarjeta-imgs{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tarjeta img:hover{
+    transform: scale(1.15);
+}
+
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "input"
+    "sprite"
+    "moves" 
+    ;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bento-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 5px solid #ffde00;
+    background-color: #6f2be6;
     border-radius: 10px;
-    background-color: #c2c9ff;
-    padding: 10px;
+    padding: 1rem;
+    box-shadow: 5px 5px #3e00a8;
+    color: #ffde00;
     font-family: "Press Start 2P", system-ui;
-    margin-top: 20px;
+    min-height: 200px;
+    text-align: start;
+    line-height: 1.5rem;
+}
+
+.item-buscar{
+    grid-area:input;
+}
+
+.item-sprite{
+    grid-area:sprite;
+}
+
+.item-moves{
+    grid-area:moves;
+}
+
+img{
+    width: 150px;
+}
+img:hover{
+    scale: 1.2;
+    transition: .3s ease-in-outs;
+}
+
+footer{
+    color: #3e00a8;
+}
+
+/* Tablet and Desktop Breakpoints */
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "input sprite"
+    "moves moves";
+  }
 }

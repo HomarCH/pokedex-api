@@ -1,30 +1,36 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pokedex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div id="contenedor-titulo">
-    <img class="pkball" src="./img/pokeball-pixel.png">
-    <h1>Pokédex</h1>
-    <img class="pkball" src="./img/pokeball-pixel.png">
-</div>
+    <div id="contenedor-titulo">
+        <img class="pkball" src="./img/pokeball-pixel.png">
+        <h1>Pokédex</h1>
+        <img class="pkball" src="./img/pokeball-pixel.png">
+    </div>
+   
+    <div class="bento-grid">
 
-    <input type="text" id="pokemonInput" placeholder="Nombre del Pokémon">
-    <button onclick="buscarPokemon()">Buscar</button>
+        <div class="bento-item item-buscar">
+                <input type="text" id="pokemonInput" placeholder="Pokémon name">
+                <button onclick="buscarPokemon()">Search</button>
+        </div>
+        <div class="bento-item item-sprite">
+            <div id="contenedor-tarjetas"></div>
+        </div>
+        <div class="bento-item item-moves">
+            <div id="contenedor-tarjetas2"></div>
+        </div>
 
-    <div id="contenedor-tarjetas"></div>
-
-    <script src="script.js"></script>
-
-
-
+    </div>
+    <footer>Homar-CH 2026</footer>
+    
+    <script src="script.js"></script> 
 </body>
 </html>
