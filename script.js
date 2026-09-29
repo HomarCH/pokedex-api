@@ -61,3 +61,16 @@ function playCry(url) {
     audio.volume = 0.2;
     audio.play();
 }
+
+  const input = document.getElementById('pokemonInput');
+
+  input.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Evita el comportamiento por defecto
+      enterAccion();
+    }
+  });
+
+  function enterAccion() {
+    buscarPokemon();
+  }
